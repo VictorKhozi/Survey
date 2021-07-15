@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    tools:context=".AddCensus">
+
+    <RelativeLayout
+        android:id="@+id/vie_id"
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#F0F4F4">
+
+        <TextView
+
+            android:layout_alignParentTop="true"
+            android:textSize="60sp"
+            android:textAllCaps="true"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/text1"
+            android:textColor="@color/teal_700"
+            android:gravity="center"
+            android:text="survey"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/vie_id"
+        android:padding="30dp"
+        >
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/location_id"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_set_start_date"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="76dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="66dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Location of data collection"
+
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/survey_id"
+            app:startIconDrawable="@drawable/ic_baseline_add_location_24">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/survey_location"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/survey_id"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/location_id"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+
+            android:textColorHint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:startIconDrawable="@drawable/ic_baseline_add_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/survey_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:hint="Notification title"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_set_start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_create_survey"
+            android:layout_alignStart="@+id/btn_create_survey"
+            android:layout_alignLeft="@+id/btn_create_survey"
+            android:layout_alignEnd="@+id/btn_create_survey"
+            android:layout_alignRight="@+id/btn_create_survey"
+            android:layout_marginStart="-3dp"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="0dp"
+            android:backgroundTint="@color/white"
+            android:text="Survey Start Date"
+            android:textAllCaps="false"
+            android:textColor="#F14FDB"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/location_id"
+            app:layout_constraintVertical_bias="0.036" />
+
+        <Button
+            android:id="@+id/btn_create_survey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="102dp"
+            android:backgroundTint="@color/white"
+            android:text="Create Survey"
+            android:textAllCaps="false"
+            android:textColor="#F14FDB" />
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
