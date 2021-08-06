@@ -44,7 +44,10 @@
         android:id="@+id/tables"
         android:paddingLeft="10dp"
         android:paddingRight="10dp" >
-        <TableRow android:background="#F103E5" android:padding="5dp">
+        <TableRow
+            android:background="#F103E5"
+            android:id="@+id/tb_row"
+            android:padding="5dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,71 +67,14 @@
                 android:layout_weight="1"
                 android:text="No. of People RSS" />
         </TableRow>
-        <TableRow android:background="#E883EC" android:padding="5dp"
-            android:layout_marginTop="5dp"
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:text="Mr &amp; Mrs Makawa" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:text="5" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:text="3" />
-        </TableRow>
-        <TableRow android:background="#E883EC"
-            android:layout_marginTop="5dp"
-            android:padding="5dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:text="Mrs E. Chisamba" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:text="7" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:text="2" />
-        </TableRow>
-        <TableRow android:background="#E883EC"
-            android:layout_marginTop="5dp"
-            android:padding="5dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:text="Dr H. Bwandakowese" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:text="4" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:text="4" />
-        </TableRow>
+            <ListView
+                android:id="@+id/survey_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

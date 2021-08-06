@@ -79,7 +79,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-
+            android:hint="Survey Topic"
             android:textColorHint="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:startIconDrawable="@drawable/ic_baseline_add_24">
@@ -89,7 +89,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="text"
-                android:hint="Notification title"
                 android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -99,13 +98,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/btn_create_survey"
-            android:layout_alignStart="@+id/btn_create_survey"
+            android:layout_alignStart="@+id/survey_id"
             android:layout_alignLeft="@+id/btn_create_survey"
-            android:layout_alignEnd="@+id/btn_create_survey"
+            android:layout_alignEnd="@+id/survey_id"
             android:layout_alignRight="@+id/btn_create_survey"
-            android:layout_marginStart="-3dp"
+            android:layout_marginStart="77dp"
             android:layout_marginLeft="-3dp"
-            android:layout_marginEnd="14dp"
+            android:layout_marginEnd="64dp"
             android:layout_marginRight="14dp"
             android:layout_marginBottom="0dp"
             android:backgroundTint="@color/white"
@@ -122,12 +121,11 @@
             android:id="@+id/btn_create_survey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
+            android:layout_alignStart="@+id/survey_id"
+            android:layout_alignEnd="@+id/survey_id"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-
             android:layout_marginStart="50dp"
             android:layout_marginLeft="60dp"
             android:layout_marginEnd="50dp"

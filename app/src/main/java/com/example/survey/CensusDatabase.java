@@ -1,6 +1,5 @@
 package com.example.survey;
 
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -22,11 +21,11 @@ public class CensusDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(
-                "create table "+ SurveyTableName +"(code text primary key not null, name text,start_date text,end_date text,location text)"
+                "create table "+ SurveyTableName +"(id integer primary key autoincrement, name text,start_date text,end_date text,location text)"
         );
 
         db.execSQL(
-                "create table "+ CensusTableName +"(id integer primary key autoincrement not null, survey_code text not null, family_name text,num_of_people text,num_reached_sec text,date_collected text)"
+                "create table "+ CensusTableName +"(id integer primary key autoincrement, survey_code int, family_name text, num_of_people text, num_reached_sec text, date_collected text)"
         );
     }
 
@@ -39,10 +38,9 @@ public class CensusDatabase extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addSurvey(String code, String name, String startDate, String location){
+    public boolean addSurvey(String name, String startDate, String location){
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("code", code); //s0001,s0002
         contentValues.put("name", name);
         contentValues.put("start_date", startDate);
         contentValues.put("location", location);
@@ -50,10 +48,10 @@ public class CensusDatabase extends SQLiteOpenHelper {
         return true;
     }
 
-    public boolean addCollectedData(String survey_code, String family_name, String num_of_people, String num_reached_sec, String date_collected){
+    public boolean addCollectedData(Integer id, String family_name, String num_of_people, String num_reached_sec, String date_collected){
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("survey_code", survey_code);
+        contentValues.put("survey_code", id);
         contentValues.put("family_name", family_name);
         contentValues.put("num_of_people", num_of_people);
         contentValues.put("num_reached_sec", num_reached_sec);
@@ -62,14 +60,14 @@ public class CensusDatabase extends SQLiteOpenHelper {
         return true;
     }
 
-    public Cursor getSurveyData(){
+    public Cursor getSurveyTopics(){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor response = db.rawQuery("select * from "+SurveyTableName, null);
         return response;
     }
 
     public Cursor getCensusData(){
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
         Cursor response = db.rawQuery("select * from "+CensusTableName, null);
         return response;
     }

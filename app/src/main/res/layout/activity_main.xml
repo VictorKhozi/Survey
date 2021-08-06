@@ -17,7 +17,7 @@
         android:layout_marginEnd="177dp"
         android:layout_marginRight="177dp"
         android:layout_marginBottom="361dp"
-        android:text="survey"
+        android:text="Survey"
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="80sp"
