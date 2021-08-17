@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Census</string>
+    <string name="population_census_app">Population Census App</string>
+    <string name="census">CENSUS</string>
+    <string name="family_name">Family Name</string>
+    <string name="number_of_people">Number of people</string>
+    <string name="save_data">Save Data</string>
+    <string name="n_o_reached_sec">N.o reached Sec</string>
+</resources>
