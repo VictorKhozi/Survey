@@ -1,0 +1,299 @@
+package com.example.census;
+
+
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
+
+import androidx.test.espresso.ViewInteraction;
+import androidx.test.filters.LargeTest;
+import androidx.test.rule.ActivityTestRule;
+import androidx.test.runner.AndroidJUnit4;
+
+import org.hamcrest.Description;
+import org.hamcrest.Matcher;
+import org.hamcrest.TypeSafeMatcher;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.Espresso.pressBack;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static androidx.test.espresso.action.ViewActions.pressImeActionButton;
+import static androidx.test.espresso.action.ViewActions.replaceText;
+import static androidx.test.espresso.action.ViewActions.scrollTo;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
+import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.is;
+
+@LargeTest
+@RunWith(AndroidJUnit4.class)
+public class MainActivityTest {
+
+    @Rule
+    public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
+
+    @Test
+    public void mainActivityTest() {
+        ViewInteraction extendedFloatingActionButton = onView(
+                allOf(withId(R.id.create), withText("Create"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.RelativeLayout")),
+                                        0),
+                                2),
+                        isDisplayed()));
+        extendedFloatingActionButton.perform(click());
+
+        ViewInteraction textInputEditText = onView(
+                allOf(withId(R.id.survey_title),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.survey_id),
+                                        0),
+                                0),
+                        isDisplayed()));
+        textInputEditText.perform(click());
+
+        ViewInteraction textInputEditText2 = onView(
+                allOf(withId(R.id.survey_title),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.survey_id),
+                                        0),
+                                0),
+                        isDisplayed()));
+        textInputEditText2.perform(replaceText("literacy "), closeSoftKeyboard());
+
+        ViewInteraction textInputEditText3 = onView(
+                allOf(withId(R.id.survey_location),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.survey_location_id),
+                                        0),
+                                0),
+                        isDisplayed()));
+        textInputEditText3.perform(replaceText("zomba"), closeSoftKeyboard());
+
+        pressBack();
+
+        ViewInteraction materialButton = onView(
+                allOf(withId(R.id.btn_set_start_date), withText("Set start date"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("androidx.constraintlayout.widget.ConstraintLayout")),
+                                        1),
+                                2)));
+        materialButton.perform(scrollTo(), click());
+
+        ViewInteraction materialButton2 = onView(
+                allOf(withId(android.R.id.button1), withText("OK"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.ScrollView")),
+                                        0),
+                                3)));
+        materialButton2.perform(scrollTo(), click());
+
+        ViewInteraction materialButton3 = onView(
+                allOf(withId(R.id.btn_create_survey), withText("Create"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("androidx.constraintlayout.widget.ConstraintLayout")),
+                                        1),
+                                3)));
+        materialButton3.perform(scrollTo(), click());
+
+        ViewInteraction appCompatImageButton = onView(
+                allOf(withContentDescription("Navigate up"),
+                        childAtPosition(
+                                allOf(withId(R.id.action_bar),
+                                        childAtPosition(
+                                                withId(R.id.action_bar_container),
+                                                0)),
+                                1),
+                        isDisplayed()));
+        appCompatImageButton.perform(click());
+
+        ViewInteraction extendedFloatingActionButton2 = onView(
+                allOf(withId(R.id.conduct_surveys), withText("Conduct"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.RelativeLayout")),
+                                        0),
+                                3),
+                        isDisplayed()));
+        extendedFloatingActionButton2.perform(click());
+
+        ViewInteraction textInputEditText4 = onView(
+                allOf(withId(R.id.family_name),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.family),
+                                        0),
+                                0)));
+        textInputEditText4.perform(scrollTo(), click());
+
+        pressBack();
+
+        ViewInteraction textInputEditText5 = onView(
+                allOf(withId(R.id.family_name),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.family),
+                                        0),
+                                0)));
+        textInputEditText5.perform(scrollTo(), click());
+
+        ViewInteraction textInputEditText6 = onView(
+                allOf(withId(R.id.family_name),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.family),
+                                        0),
+                                0)));
+        textInputEditText6.perform(scrollTo(), replaceText("phiri"), closeSoftKeyboard());
+
+        pressBack();
+
+        ViewInteraction textInputEditText7 = onView(
+                allOf(withId(R.id.num_of_people),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.people),
+                                        0),
+                                0)));
+        textInputEditText7.perform(scrollTo(), replaceText("6"), closeSoftKeyboard());
+
+        pressBack();
+
+        ViewInteraction textInputEditText8 = onView(
+                allOf(withId(R.id.num_of_people_reached_sec),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.people_reached_sec),
+                                        0),
+                                0)));
+        textInputEditText8.perform(scrollTo(), replaceText("3"), closeSoftKeyboard());
+
+        ViewInteraction textInputEditText9 = onView(
+                allOf(withId(R.id.num_of_people_reached_sec), withText("3"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.people_reached_sec),
+                                        0),
+                                0)));
+        textInputEditText9.perform(pressImeActionButton());
+
+        ViewInteraction materialButton4 = onView(
+                allOf(withId(R.id.btn_save_family_details), withText("save data"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.ScrollView")),
+                                        0),
+                                4)));
+        materialButton4.perform(scrollTo(), click());
+
+        ViewInteraction textInputEditText10 = onView(
+                allOf(withId(R.id.family_name),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.family),
+                                        0),
+                                0)));
+        textInputEditText10.perform(scrollTo(), replaceText("mama"), closeSoftKeyboard());
+
+        pressBack();
+
+        ViewInteraction textInputEditText11 = onView(
+                allOf(withId(R.id.num_of_people),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.people),
+                                        0),
+                                0)));
+        textInputEditText11.perform(scrollTo(), replaceText("5"), closeSoftKeyboard());
+
+        pressBack();
+
+        ViewInteraction textInputEditText12 = onView(
+                allOf(withId(R.id.num_of_people_reached_sec),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.people_reached_sec),
+                                        0),
+                                0)));
+        textInputEditText12.perform(scrollTo(), replaceText("2"), closeSoftKeyboard());
+
+        pressBack();
+
+        ViewInteraction materialButton5 = onView(
+                allOf(withId(R.id.btn_save_family_details), withText("save data"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.ScrollView")),
+                                        0),
+                                4)));
+        materialButton5.perform(scrollTo(), click());
+
+        pressBack();
+
+        ViewInteraction extendedFloatingActionButton3 = onView(
+                allOf(withId(R.id.surveys), withText("View"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.RelativeLayout")),
+                                        0),
+                                4),
+                        isDisplayed()));
+        extendedFloatingActionButton3.perform(click());
+
+        ViewInteraction appCompatImageButton2 = onView(
+                allOf(withContentDescription("Navigate up"),
+                        childAtPosition(
+                                allOf(withId(R.id.action_bar),
+                                        childAtPosition(
+                                                withId(R.id.action_bar_container),
+                                                0)),
+                                1),
+                        isDisplayed()));
+        appCompatImageButton2.perform(click());
+
+        ViewInteraction extendedFloatingActionButton4 = onView(
+                allOf(withId(R.id.analysis), withText("Analysis"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.RelativeLayout")),
+                                        0),
+                                5),
+                        isDisplayed()));
+        extendedFloatingActionButton4.perform(click());
+
+        pressBack();
+    }
+
+    private static Matcher<View> childAtPosition(
+            final Matcher<View> parentMatcher, final int position) {
+
+        return new TypeSafeMatcher<View>() {
+            @Override
+            public void describeTo(Description description) {
+                description.appendText("Child at position " + position + " in parent ");
+                parentMatcher.describeTo(description);
+            }
+
+            @Override
+            public boolean matchesSafely(View view) {
+                ViewParent parent = view.getParent();
+                return parent instanceof ViewGroup && parentMatcher.matches(parent)
+                        && view.equals(((ViewGroup) parent).getChildAt(position));
+            }
+        };
+    }
+}

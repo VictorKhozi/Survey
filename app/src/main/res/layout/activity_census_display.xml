@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CensusDisplay">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/census"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0"
+                android:padding="20dp"
+                android:text="CENSUS"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:background="#F14FDB"
+                android:textSize="50dp"
+                />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:layout_width="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/census"
+                app:layout_constraintBottom_toTopOf="@id/tables"
+                android:text="Conducted Survey Here..."
+                android:id="@+id/cunsuses"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="8dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#E380ED"
+                android:contentDescription="conducted surveys"
+                app:icon="@drawable/ic_baseline_arrow_drop_down_24"
+                app:layout_anchorGravity="bottom|right|end"
+                />
+
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="180dp"
+                android:id="@+id/tables"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" >
+                <TableRow
+                    android:background="#F103E5"
+                    android:id="@+id/tb_row"
+                    android:padding="5dp">
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/white"
+                        android:text="Families" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/white"
+                        android:text="N.o of People INF" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="No. of People RSS" />
+                </TableRow>
+                <RelativeLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    >
+                    <ListView
+                        android:id="@+id/survey_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+            </TableLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

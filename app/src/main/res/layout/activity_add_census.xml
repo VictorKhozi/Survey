@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    tools:context=".AddCensus">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <RelativeLayout
+               android:id="@+id/vie_id"
+               android:layout_width="match_parent"
+               android:layout_height="100dp"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintVertical_bias="0"
+               android:orientation="vertical"
+               android:gravity="center"
+               android:background="#F0F4F4">
+
+               <TextView
+                   android:layout_alignParentTop="true"
+                   android:textSize="60sp"
+                   android:textAllCaps="true"
+                   android:layout_height="wrap_content"
+                   android:layout_width="wrap_content"
+                   android:id="@+id/text1"
+                   android:textColor="@color/teal_700"
+                   android:gravity="center"
+                   android:text="survey"
+                   />
+
+           </RelativeLayout>
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:layout_constraintTop_toBottomOf="@id/vie_id"
+               android:padding="30dp"
+               >
+
+
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/survey_id"
+                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+
+                   android:layout_alignParentLeft="true"
+                   android:layout_alignParentEnd="true"
+                   android:layout_alignParentRight="true"
+
+                   android:textColorHint="@color/white"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:startIconDrawable="@drawable/ic_baseline_add_24">
+
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:id="@+id/survey_title"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:inputType="text"
+                       android:hint="Survey Topic"
+                       android:singleLine="true" />
+
+               </com.google.android.material.textfield.TextInputLayout>
+
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/survey_location_id"
+                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@id/survey_id"
+                   android:layout_alignParentLeft="true"
+                   android:layout_alignParentEnd="true"
+                   android:layout_alignParentRight="true"
+
+                   android:textColorHint="@color/white"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:startIconDrawable="@drawable/ic_baseline_add_24">
+
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:id="@+id/survey_location"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:inputType="text"
+                       android:hint="Survey Location"
+                       android:singleLine="true" />
+
+               </com.google.android.material.textfield.TextInputLayout>
+
+               <Button
+                   android:id="@+id/btn_set_start_date"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@id/survey_location_id"
+
+                   android:textAllCaps="false"
+                   android:backgroundTint="@color/teal_700"
+                   android:text="Set start date" />
+
+               <Button
+                   android:id="@+id/btn_create_survey"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/btn_set_start_date"
+
+                   android:textAllCaps="false"
+                   android:backgroundTint="@color/teal_700"
+                   android:text="Create" />
+
+               <Button
+                   android:id="@+id/btn_conduct_survey"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/btn_create_survey"
+                   android:layout_alignStart="@+id/btn_create_survey"
+                   android:layout_alignLeft="@+id/btn_create_survey"
+                   android:layout_alignEnd="@+id/btn_create_survey"
+                   android:layout_alignRight="@+id/btn_create_survey"
+                   android:layout_marginStart="-9dp"
+                   android:layout_marginLeft="-9dp"
+                   android:layout_marginTop="15dp"
+                   android:layout_marginEnd="-6dp"
+                   android:layout_marginRight="-6dp"
+                   android:textAllCaps="false"
+                   android:backgroundTint="@color/teal_700"
+                   android:text="Conduct" />
+           </RelativeLayout>
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+   </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
